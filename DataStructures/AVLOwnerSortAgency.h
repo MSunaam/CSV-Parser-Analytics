@@ -10,17 +10,6 @@
 #include<iostream>
 using namespace std;
 
-
-struct Node{
-    Owner* obj;
-    Node* left, *right;
-    int height;
-    Node(){
-        left = right = nullptr;
-        height = 1;
-    }
-};
-
 class AVLOwnerSortAgency{
 private:
     Node* root, *loc, *ploc;
@@ -285,7 +274,7 @@ void AVLOwnerSortAgency::searchNode( string agency ) {
 void AVLOwnerSortAgency::printByAgency( string agency ) {
     searchNode(agency);
     if(loc == nullptr){
-        cout << "Agent not found" << endl;
+        cout << "Agency not found" << endl;
         return;
     }else{
         loc->obj->printForOwner();

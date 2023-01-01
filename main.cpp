@@ -110,6 +110,9 @@ int main(){
             ownerTree->setRoot(ownerTree->insertNode(owner, ownerTree->getRoot()));
 
             //Insert Owner Into Owner Tree sorted by Agencies
+            if(agency == "Zaidis Estate" and agent == "Zahid Iqbal"){
+
+            }
             agenciesTree->setRoot(agenciesTree->insertNode(owner, agenciesTree->getRoot()));
 
             //Insert property into hash table
