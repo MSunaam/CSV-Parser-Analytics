@@ -10,7 +10,7 @@
 #include "DataStructures/AVLOwner.h"
 using namespace std;
 
-string pathToCSV = "/Users/muhammadsunaam/Library/CloudStorage/OneDrive-NationalUniversityofSciences&Technology/Semester 3/DSA/Project New/CSV/Property.csv";
+string pathToCSV = "/Users/muhammadsunaam/Library/CloudStorage/OneDrive-NationalUniversityofSciences&Technology/Semester 3/DSA/CSV-Parser-Analytics/CSV/Property.csv";
 
 int main(){
 
@@ -102,15 +102,17 @@ int main(){
 
             propertyTable->insertIntoTable(prop);
         }
-        if(counter == 119000){
-
-        }
+//        if(counter == 119000){
+//
+//        }
         counter++;
     }
     in.close();
 
     propertyTable->print(200000);
-    ownerTree->printPreOrder(ownerTree->getRoot());
+//    ownerTree->printPreOrder(ownerTree->getRoot());
+    Owner* temp = ownerTree->getAgency("Select Homes");
+    temp->print();
 
 }
 
