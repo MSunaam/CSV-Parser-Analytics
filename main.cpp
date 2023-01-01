@@ -122,7 +122,7 @@ int main(){
 //    propertyTable->print(200000);
 //    ownerTree->printPreOrder(ownerTree->getRoot());
 //    searchForAgent(ownerTree, "Zahid Iqbal");
-    searchForAgency( ,"1 One Enterprises");
+    searchForAgency(agenciesTree ,"1 One Enterprises");
 }
 
 
