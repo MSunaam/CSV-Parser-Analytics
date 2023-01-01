@@ -1,0 +1,3 @@
+/Users/muhammadsunaam/Library/CloudStorage/OneDrive-NationalUniversityofSciences&Technology/Semester 3/DSA/Project New/cmake-build-debug/CMakeFiles/Project_New.dir
+/Users/muhammadsunaam/Library/CloudStorage/OneDrive-NationalUniversityofSciences&Technology/Semester 3/DSA/Project New/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/muhammadsunaam/Library/CloudStorage/OneDrive-NationalUniversityofSciences&Technology/Semester 3/DSA/Project New/cmake-build-debug/CMakeFiles/rebuild_cache.dir
