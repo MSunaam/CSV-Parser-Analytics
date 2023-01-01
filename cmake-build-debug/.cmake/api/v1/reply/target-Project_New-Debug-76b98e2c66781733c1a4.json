@@ -102,6 +102,7 @@
 				8,
 				9,
 				10,
+<<<<<<< HEAD
 <<<<<<<< HEAD:cmake-build-debug/.cmake/api/v1/reply/target-Project_New-Debug-9ebe473f6f9662d4c1ec.json
 				11,
 				12,
@@ -111,6 +112,9 @@
 ========
 				11
 >>>>>>>> parent of 785b6a3 (update used some enums):cmake-build-debug/.cmake/api/v1/reply/target-Project_New-Debug-76b98e2c66781733c1a4.json
+=======
+				11
+>>>>>>> parent of 785b6a3 (update used some enums)
 			]
 		}
 	],
@@ -176,6 +180,7 @@
 			"backtrace" : 1,
 			"path" : "printFunction.h",
 			"sourceGroupIndex" : 1
+<<<<<<< HEAD
 <<<<<<<< HEAD:cmake-build-debug/.cmake/api/v1/reply/target-Project_New-Debug-9ebe473f6f9662d4c1ec.json
 		},
 		{
@@ -199,6 +204,8 @@
 			"sourceGroupIndex" : 1
 ========
 >>>>>>>> parent of 785b6a3 (update used some enums):cmake-build-debug/.cmake/api/v1/reply/target-Project_New-Debug-76b98e2c66781733c1a4.json
+=======
+>>>>>>> parent of 785b6a3 (update used some enums)
 		}
 	],
 	"type" : "EXECUTABLE"

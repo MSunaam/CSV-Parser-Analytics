@@ -40,10 +40,20 @@
 					"directoryIndex" : 0,
 					"id" : "Project_New::@6890427a1f51a3e7e1df",
 <<<<<<<< HEAD:cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-89ff2b5b3ec9bf0facd5.json
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-89ff2b5b3ec9bf0facd5.json
+>>>>>>> parent of 785b6a3 (update used some enums)
 					"jsonFile" : "target-Project_New-Debug-9ebe473f6f9662d4c1ec.json",
 ========
 					"jsonFile" : "target-Project_New-Debug-76b98e2c66781733c1a4.json",
 >>>>>>>> parent of 785b6a3 (update used some enums):cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-c086c57ca8b8ca48507f.json
+<<<<<<< HEAD
+=======
+========
+					"jsonFile" : "target-Project_New-Debug-76b98e2c66781733c1a4.json",
+>>>>>>>> parent of 785b6a3 (update used some enums):cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-c086c57ca8b8ca48507f.json
+>>>>>>> parent of 785b6a3 (update used some enums)
 					"name" : "Project_New",
 					"projectIndex" : 0
 				}
