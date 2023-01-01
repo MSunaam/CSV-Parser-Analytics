@@ -10,12 +10,12 @@
 #include "DataStructures/AVLOwner.h"
 using namespace std;
 
-string pathToCSV = "/Users/muhammadsunaam/Library/CloudStorage/OneDrive-NationalUniversityofSciences&Technology/Semester 3/DSA/CSV-Parser-Analytics/CSV/Property.csv";
+string pathToCSV = "Property.csv";
 
 int main(){
 
     HashTableAVL *propertyTable;
-    propertyTable = new HashTableAVL(200000);
+    propertyTable = new HashTableAVL(20000);
 
     AVLOwner *ownerTree;
     ownerTree = new AVLOwner();
@@ -33,7 +33,7 @@ int main(){
     enum purpose purpose;
 
 
-    while(in.good() and counter <= 200000)
+    while(in.good() and counter <= 20000)
     {
         std::vector<std::string> row = csv_read_row(in, ',');
         if(counter != 0){
@@ -102,17 +102,15 @@ int main(){
 
             propertyTable->insertIntoTable(prop);
         }
-//        if(counter == 119000){
-//
-//        }
+        if(counter == 119000){
+
+        }
         counter++;
     }
     in.close();
 
     propertyTable->print(200000);
-//    ownerTree->printPreOrder(ownerTree->getRoot());
-    Owner* temp = ownerTree->getAgency("Select Homes");
-    temp->print();
+    ownerTree->printPreOrder(ownerTree->getRoot());
 
 }
 
