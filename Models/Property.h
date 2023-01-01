@@ -8,8 +8,9 @@
 #include "Location.h"
 #include "Purpose.h"
 #include "PropertyType.h"
-#include "Owner.h"
+//#include "Owner.h"
 using namespace std;
+class Owner;
 class Property{
     int propertyId, baths, bedrooms;
     string pageUrl, dateAdded;
@@ -62,30 +63,7 @@ Property::Property() {
     this->owner = nullptr;
 }
 
-void Property::print() {
-    if(propertyId != 0){
-        cout << "Property ID: " << propertyId << endl;
-        cout << "Baths: " << baths << endl;
-        cout << "Bedrooms: " << bedrooms << endl;
-        cout << "Page URL: " << pageUrl << endl;
-        cout << "Date Added: " << dateAdded << endl;
-        cout << "Price: " << price << endl;
-        cout << "Property Type: " << typeMapValues[propertyType] << endl;
-        cout << "Purpose: " << purposeMapValues[purpose] << endl;
-        if(location == nullptr){
-            cout << "Location: NULL" << endl;
-        }else{
-            location->print();
-        }
-        if(owner){
-            owner->print();
-        }else{
-            cout << "Owner: NULL" << endl;
-        }
-    }else{
-        cout << "Empty Slot" << endl;
-    }
-}
+
 
 bool Property::operator=(Property obj1) {
     return (this->propertyId == obj1.propertyId);

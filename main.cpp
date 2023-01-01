@@ -4,10 +4,11 @@
 #include <fstream>
 #include "CSV/csv.h"
 #include "DataStructures/HashTableAVL.h"
-#include "Models/Property.h"
+//#include "Models/Property.h"
 #include "Models/Location.h"
-#include "Models/Owner.h"
+//#include "Models/Owner.h"
 #include "DataStructures/AVLOwner.h"
+#include "temp.h"
 using namespace std;
 
 string pathToCSV = "/Users/muhammadsunaam/Library/CloudStorage/OneDrive-NationalUniversityofSciences&Technology/Semester 3/DSA/CSV-Parser-Analytics/CSV/Property.csv";
@@ -110,9 +111,17 @@ int main(){
     in.close();
 
     propertyTable->print(200000);
-//    ownerTree->printPreOrder(ownerTree->getRoot());
-    Owner* temp = ownerTree->getAgency("Select Homes");
-    temp->print();
 
 }
+
+
+
+
+
+
+
+
+
+
+
 
