@@ -237,7 +237,7 @@ void AVLOwner::deleteNode( Owner* value ) {
 
 void AVLOwner::printPreOrder( Node *temp ) {
     if(temp != nullptr){
-        temp->obj->printxForOwner();
+        temp->obj->printForOwner();
         cout << "___________________________________" << endl;
         printPreOrder(temp->left);
         printPreOrder(temp->right);

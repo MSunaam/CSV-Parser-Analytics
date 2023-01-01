@@ -102,7 +102,10 @@
 				8,
 				9,
 				10,
-				11
+				11,
+				12,
+				13,
+				14
 			]
 		}
 	],
@@ -167,6 +170,21 @@
 		{
 			"backtrace" : 1,
 			"path" : "printFunction.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Models/City.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Models/Province.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Functions/Functions.h",
 			"sourceGroupIndex" : 1
 		}
 	],
