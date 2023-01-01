@@ -8,7 +8,7 @@
 #include "Models/Location.h"
 //#include "Models/Owner.h"
 #include "DataStructures/AVLOwner.h"
-#include "temp.h"
+#include "printFunction.h"
 using namespace std;
 
 string pathToCSV = "/Users/muhammadsunaam/Library/CloudStorage/OneDrive-NationalUniversityofSciences&Technology/Semester 3/DSA/CSV-Parser-Analytics/CSV/Property.csv";
@@ -98,20 +98,22 @@ int main(){
             Location *loc = new Location(location_id, location, latitude, longitude, province, city);
             Owner* owner = new Owner(agency, agent);
             Property *prop = new Property(property_id, baths, bedrooms, page_url, date, price, type, purpose, loc, owner);
+
+            //Insert property into owner
+            owner->insertProperty(prop);
+
+            //Insert Owner Into Owner Tree
             ownerTree->setRoot(ownerTree->insertNode(owner, ownerTree->getRoot()));
 
-
+            //Insert property into hash table
             propertyTable->insertIntoTable(prop);
         }
-//        if(counter == 119000){
-//
-//        }
         counter++;
     }
     in.close();
 
-    propertyTable->print(200000);
-
+//    propertyTable->print(200000);
+    ownerTree->printPreOrder(ownerTree->getRoot());
 }
 
 

@@ -23,7 +23,7 @@ void Property::print() {
             location->print();
         }
         if(owner){
-            owner->print();
+            owner->printFromProperty();
         }else{
             cout << "Owner: NULL" << endl;
         }

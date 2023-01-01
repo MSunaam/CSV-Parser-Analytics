@@ -65,6 +65,8 @@ Node* AVLOwner::insertNode( Owner* value, Node* temp ) {
     }
     else if( temp->obj->getAgentName() == value->getAgentName()){
         //Node with that value already exists, avoid duplication.
+        //But Insert the values of properties
+        temp->obj->insertProperty(value->getFirstPropertyInserted());
         return temp;
     }
     else if( temp->obj->getAgentName() > value->getAgentName()){
@@ -235,7 +237,7 @@ void AVLOwner::deleteNode( Owner* value ) {
 
 void AVLOwner::printPreOrder( Node *temp ) {
     if(temp != nullptr){
-        temp->obj->print();
+        temp->obj->printxForOwner();
         cout << "___________________________________" << endl;
         printPreOrder(temp->left);
         printPreOrder(temp->right);

@@ -41,6 +41,7 @@ public:
     int updateHeight(NodeAVL* temp);
     Property* getProperty(int id);
     void searchNode(int id);
+    Property* getRootObject();
 };
 
 
@@ -278,6 +279,11 @@ void AVLProperty::searchNode( int id ) {
             }
         }
     }
+}
+
+Property *AVLProperty::getRootObject() {
+    if(root) return root->obj;
+    return nullptr;
 }
 
 

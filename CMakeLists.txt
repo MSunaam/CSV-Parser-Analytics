@@ -4,7 +4,7 @@ project(Project_New)
 set(CMAKE_CXX_STANDARD 11)
 
 add_executable(Project_New
-        main.cpp Models/Property.h Models/Location.h Models/Owner.h DataStructures/AVLProperty.h DataStructures/HashTable.h Models/PropertyType.h Models/Purpose.h CSV/csv.h DataStructures/HashTableAVL.h DataStructures/AVLOwner.h temp.h)
+        main.cpp Models/Property.h Models/Location.h Models/Owner.h DataStructures/AVLProperty.h DataStructures/HashTable.h Models/PropertyType.h Models/Purpose.h CSV/csv.h DataStructures/HashTableAVL.h DataStructures/AVLOwner.h printFunction.h)
 
 
 

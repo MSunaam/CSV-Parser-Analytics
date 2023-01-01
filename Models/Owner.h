@@ -19,7 +19,13 @@ public:
         this->agent = agent;
         properties = new AVLProperty();
     }
-    void print(){
+    void printForOwner(){
+        cout << "Agency: " << agency << endl;
+        cout << "Agent: " << agent << endl;
+        cout << "_____Properties_____" << endl;
+        properties->printPreOrder(properties->getRoot());
+    }
+    void printFromProperty(){
         cout << "Agency: " << agency << endl;
         cout << "Agent: " << agent << endl;
     }
@@ -30,7 +36,10 @@ public:
         return agent;
     }
     void insertProperty(Property* aProperty){
-        properties->insertNode(aProperty, properties->getRoot());
+        properties->setRoot(properties->insertNode(aProperty, properties->getRoot()));
+    }
+    Property* getFirstPropertyInserted(){
+        return properties->getRootObject();
     }
 };
 
