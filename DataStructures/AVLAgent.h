@@ -239,7 +239,7 @@ void AVLAgent::deleteNode( Owner* value ) {
 
 void AVLAgent::printPreOrder( Node *temp ) {
     if(temp != nullptr){
-        temp->obj->printForOwner();
+        temp->obj->printxForOwner();
         cout << "___________________________________" << endl;
         printPreOrder(temp->left);
         printPreOrder(temp->right);

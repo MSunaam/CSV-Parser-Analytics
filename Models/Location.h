@@ -6,15 +6,11 @@
 #define PROJECT_NEW_LOCATION_H
 
 #include<string>
-#include "City.h"
-#include "Province.h"
 using namespace std;
 
 class Location{
     double latitude, longitude;
-    string location_name;
-    Province province;
-    City city;
+    string location_name, province, city;
     int locationId;
 public:
     Location();
@@ -27,8 +23,8 @@ Location::Location() {
     this->location_name = "";
     this->latitude = 0;
     this->longitude = 0;
-    this->province = Null;
-    this->city = Empty;
+    this->province = "";
+    this->city = "";
 }
 
 Location::Location(int id, string name, double latitude, double longitude, string province, string city) {
@@ -36,8 +32,8 @@ Location::Location(int id, string name, double latitude, double longitude, strin
     this->location_name = name;
     this->latitude = latitude;
     this->longitude = longitude;
-    this->province = provinceMap[province];
-    this->city = cityMap[city];
+    this->province = province;
+    this->city = city;
 }
 
 void Location::print() {
@@ -45,8 +41,8 @@ void Location::print() {
     cout << "Location Name: " << location_name << endl;
     cout << "Latitude: " << latitude << endl;
     cout << "Longitude: " << longitude << endl;
-    cout << "Province: " << valuesProvinceMap[province] << endl;
-    cout << "City: " << valuesCityMap[city] << endl;
+    cout << "Province: " << province << endl;
+    cout << "City: " << city << endl;
 }
 
 #endif //PROJECT_NEW_LOCATION_H
