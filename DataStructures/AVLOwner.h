@@ -275,7 +275,7 @@ void AVLOwner::searchNode( string agent ) {
     loc = ploc = nullptr;
     if(!isEmpty()){
         loc = root;
-        while( loc->obj->getAgentName() != agent and loc != nullptr){
+        while(  loc != nullptr and loc->obj->getAgentName() != agent){
             ploc = loc;
             if(agent < loc->obj->getAgentName()){
                 loc = loc->left;
@@ -288,10 +288,11 @@ void AVLOwner::searchNode( string agent ) {
 
 void AVLOwner::printByAgent( string agent ) {
     searchNode(agent);
-    if(loc != nullptr and loc->obj->getAgentName() == agent){
-        loc->obj->printForOwner();
-    }else{
+    if(loc == nullptr){
         cout << "Agent not found" << endl;
+        return;
+    }else{
+        loc->obj->printForOwner();
     }
 }
 

@@ -9,6 +9,7 @@
 //#include "Models/Owner.h"
 //#include "DataStructures/AVLOwner.h"
 #include "printFunction.h"
+#include "Functions/Functions.h"
 using namespace std;
 
 string pathToCSV = "/Users/muhammadsunaam/Library/CloudStorage/OneDrive-NationalUniversityofSciences&Technology/Semester 3/DSA/CSV-Parser-Analytics/CSV/Property.csv";
@@ -113,7 +114,8 @@ int main(){
     in.close();
 
 //    propertyTable->print(200000);
-    ownerTree->printPreOrder(ownerTree->getRoot());
+//    ownerTree->printPreOrder(ownerTree->getRoot());
+    searchForAgent(ownerTree, "Zahid Iqbal");
 }
 
 

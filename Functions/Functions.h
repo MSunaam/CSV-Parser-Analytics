@@ -10,6 +10,9 @@
 #include "../DataStructures/AVLOwner.h"
 using namespace std;
 
+void searchForAgent(AVLOwner* owners, string agent){
+    owners->printByAgent(agent);
+}
 
 
 #endif //PROJECT_NEW_FUNCTIONS_H
