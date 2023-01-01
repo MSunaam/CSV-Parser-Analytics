@@ -22,6 +22,9 @@ int main(){
     AVLOwner *ownerTree;
     ownerTree = new AVLOwner();
 
+    AVLOwnerSortAgency *agenciesTree;
+    agenciesTree = new AVLOwnerSortAgency();
+
     std::ifstream in(pathToCSV);
     if (in.fail()) return (cout << "File not found" << endl) && 0;
     int counter = 0;
@@ -106,6 +109,9 @@ int main(){
             //Insert Owner Into Owner Tree
             ownerTree->setRoot(ownerTree->insertNode(owner, ownerTree->getRoot()));
 
+            //Insert Owner Into Owner Tree sorted by Agencies
+            agenciesTree->setRoot(agenciesTree->insertNode(owner, agenciesTree->getRoot()));
+
             //Insert property into hash table
             propertyTable->insertIntoTable(prop);
         }
@@ -115,7 +121,8 @@ int main(){
 
 //    propertyTable->print(200000);
 //    ownerTree->printPreOrder(ownerTree->getRoot());
-    searchForAgent(ownerTree, "Zahid Iqbal");
+//    searchForAgent(ownerTree, "Zahid Iqbal");
+    searchForAgency( ,"1 One Enterprises");
 }
 
 

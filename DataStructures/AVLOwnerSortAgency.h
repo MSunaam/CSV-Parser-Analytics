@@ -1,13 +1,9 @@
 //
-// Created by Muhammad Sunaam on 01/01/2023.
+// Created by Muhammad Sunaam on 02/01/2023.
 //
 
-#ifndef PROJECT_NEW_AVLOWNER_H
-#define PROJECT_NEW_AVLOWNER_H
-
-//
-// Created by Muhammad Sunaam on 25/12/2022.
-//
+#ifndef PROJECT_NEW_AVLOwnerSortAgencySORTAGENCY_H
+#define PROJECT_NEW_AVLOwnerSortAgencySORTAGENCY_H
 
 #include "../Models/Owner.h"
 
@@ -25,11 +21,11 @@ struct Node{
     }
 };
 
-class AVLOwner{
+class AVLOwnerSortAgency{
 private:
     Node* root, *loc, *ploc;
 public:
-    AVLOwner();
+    AVLOwnerSortAgency();
     bool isEmpty();
     Node* insertNode(Owner *value, Node* temp);
     void searchNode(Owner *value);
@@ -42,34 +38,35 @@ public:
     Node* getRoot();
     void setRoot(Node* temp);
     int updateHeight(Node* temp);
-    void searchNode(string agent);
-    void printByAgent(string agent);
+    Owner* getAgency(string agency);
+    void searchNode(string agency);
+    void printByAgency(string agency);
 };
 
 
-AVLOwner::AVLOwner() {
+AVLOwnerSortAgency::AVLOwnerSortAgency() {
     root = loc = ploc = nullptr;
 }
 
 
-bool AVLOwner::isEmpty() {
+bool AVLOwnerSortAgency::isEmpty() {
     return root == nullptr;
 }
 
 
-Node* AVLOwner::insertNode( Owner* value, Node* temp ) {
+Node* AVLOwnerSortAgency::insertNode( Owner* value, Node* temp ) {
     if(temp == nullptr){
         auto* newNode = new Node;
         newNode->obj = value;
         return newNode;
     }
-    else if( temp->obj->getAgentName() == value->getAgentName()){
+    else if( temp->obj->getAgencyName() == value->getAgencyName()){
         //Node with that value already exists, avoid duplication.
         //But Insert the values of properties
         temp->obj->insertProperty(value->getFirstPropertyInserted());
         return temp;
     }
-    else if( temp->obj->getAgentName() > value->getAgentName()){
+    else if( temp->obj->getAgencyName() > value->getAgencyName()){
         //go left
         temp->left = insertNode(value, temp->left);
     }else{
@@ -83,7 +80,7 @@ Node* AVLOwner::insertNode( Owner* value, Node* temp ) {
     int balanceFactor = getBalanceFactor(temp);
     if(balanceFactor < -1){
         //right side heavier
-        if(value->getAgentName() < temp->right->obj->getAgentName() ){
+        if(value->getAgencyName() < temp->right->obj->getAgencyName() ){
             //right left rotation
             temp->right = rightRotate(temp->right);
             return leftRotate(temp);
@@ -92,7 +89,7 @@ Node* AVLOwner::insertNode( Owner* value, Node* temp ) {
         }
     }else if(balanceFactor > 1){
         //left side heavier
-        if(value->getAgentName() > temp->left->obj->getAgentName()){
+        if(value->getAgencyName() > temp->left->obj->getAgencyName()){
             //left right rotation
             temp->left = leftRotate(temp->left);
             return rightRotate(temp);
@@ -104,13 +101,13 @@ Node* AVLOwner::insertNode( Owner* value, Node* temp ) {
 }
 
 
-void AVLOwner::searchNode( Owner* owner ) {
+void AVLOwnerSortAgency::searchNode( Owner* owner ) {
     loc = ploc = nullptr;
     if(!isEmpty()){
         loc = root;
-        while( loc->obj->getAgentName() != owner->getAgentName() and loc != nullptr){
+        while( loc->obj->getAgencyName() != owner->getAgencyName() and loc != nullptr){
             ploc = loc;
-            if(owner->getAgentName() < loc->obj->getAgentName()){
+            if(owner->getAgencyName() < loc->obj->getAgencyName()){
                 loc = loc->left;
             }else{
                 loc = loc->right;
@@ -120,19 +117,19 @@ void AVLOwner::searchNode( Owner* owner ) {
 }
 
 
-int AVLOwner::getBalanceFactor( Node *temp ) {
+int AVLOwnerSortAgency::getBalanceFactor( Node *temp ) {
     if(temp == nullptr) return 0;
     return ( getHeight(temp->left) - getHeight(temp->right) );
 }
 
 
-int AVLOwner::getHeight( Node *temp ) {
+int AVLOwnerSortAgency::getHeight( Node *temp ) {
     if(temp == nullptr) return 0;
     return temp->height;
 }
 
 
-Node *AVLOwner::rightRotate( Node *tempRoot ) {
+Node *AVLOwnerSortAgency::rightRotate( Node *tempRoot ) {
     auto* x = tempRoot;
     auto* y = x->left;
     auto* temp = y->right;
@@ -145,7 +142,7 @@ Node *AVLOwner::rightRotate( Node *tempRoot ) {
 }
 
 
-Node *AVLOwner::leftRotate( Node *tempRoot ) {
+Node *AVLOwnerSortAgency::leftRotate( Node *tempRoot ) {
     auto* x = tempRoot;
     auto* y = x->right;
     auto* temp = y->left;
@@ -158,7 +155,7 @@ Node *AVLOwner::leftRotate( Node *tempRoot ) {
 }
 
 
-void AVLOwner::deleteNode( Owner* value ) {
+void AVLOwnerSortAgency::deleteNode( Owner* value ) {
     if(!isEmpty()){
         //tree exists
         searchNode(value);
@@ -235,7 +232,7 @@ void AVLOwner::deleteNode( Owner* value ) {
 }
 
 
-void AVLOwner::printPreOrder( Node *temp ) {
+void AVLOwnerSortAgency::printPreOrder( Node *temp ) {
     if(temp != nullptr){
         temp->obj->printForOwner();
         cout << "___________________________________" << endl;
@@ -245,30 +242,38 @@ void AVLOwner::printPreOrder( Node *temp ) {
 }
 
 
-Node *AVLOwner::getRoot() {
+Node *AVLOwnerSortAgency::getRoot() {
     return root;
 }
 
 
-void AVLOwner::setRoot( Node *temp ) {
+void AVLOwnerSortAgency::setRoot( Node *temp ) {
     root = temp;
 }
 
 
-int AVLOwner::updateHeight( Node *temp ) {
+int AVLOwnerSortAgency::updateHeight( Node *temp ) {
     if(temp){
         return(1+(max(getHeight(temp->left), getHeight(temp->right))));
     }
     return 0;
 }
 
-void AVLOwner::searchNode( string agent ) {
+Owner* AVLOwnerSortAgency::getAgency( string agency ) {
+    searchNode(agency);
+    if(loc != nullptr and loc->obj->getAgencyName() == agency){
+        return loc->obj;
+    }
+    return nullptr;
+}
+
+void AVLOwnerSortAgency::searchNode( string agency ) {
     loc = ploc = nullptr;
     if(!isEmpty()){
         loc = root;
-        while(  loc != nullptr and loc->obj->getAgentName() != agent){
+        while(  loc != nullptr and loc->obj->getAgencyName() != agency){
             ploc = loc;
-            if(agent < loc->obj->getAgentName()){
+            if(agency < loc->obj->getAgentName()){
                 loc = loc->left;
             }else{
                 loc = loc->right;
@@ -277,8 +282,8 @@ void AVLOwner::searchNode( string agent ) {
     }
 }
 
-void AVLOwner::printByAgent( string agent ) {
-    searchNode(agent);
+void AVLOwnerSortAgency::printByAgency( string agency ) {
+    searchNode(agency);
     if(loc == nullptr){
         cout << "Agent not found" << endl;
         return;
@@ -287,5 +292,4 @@ void AVLOwner::printByAgent( string agent ) {
     }
 }
 
-
-#endif PROJECT_NEW_AVLOWNER_H
+#endif //PROJECT_NEW_AVLOwnerSortAgencySORTAGENCY_H
