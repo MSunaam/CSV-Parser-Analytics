@@ -7,7 +7,7 @@
 //#include "Models/Property.h"
 #include "Models/Location.h"
 //#include "Models/Owner.h"
-#include "DataStructures/AVLOwner.h"
+//#include "DataStructures/AVLOwner.h"
 #include "printFunction.h"
 using namespace std;
 

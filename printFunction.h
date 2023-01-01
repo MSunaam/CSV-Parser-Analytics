@@ -3,7 +3,7 @@
 //
 
 #include "Models/Property.h"
-#include "Models/Owner.h"
+#include "DataStructures/AVLOwner.h"
 #include <iostream>
 using namespace std;
 
@@ -30,4 +30,5 @@ void Property::print() {
     }else{
         cout << "Empty Slot" << endl;
     }
+
 }

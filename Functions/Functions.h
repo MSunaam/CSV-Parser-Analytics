@@ -6,9 +6,10 @@
 #define PROJECT_NEW_FUNCTIONS_H
 
 #include <iostream>
-#include "../DataStructures/
+#include <string>
+#include "../DataStructures/AVLOwner.h"
 using namespace std;
 
-void searchForOwner();
+
 
 #endif //PROJECT_NEW_FUNCTIONS_H

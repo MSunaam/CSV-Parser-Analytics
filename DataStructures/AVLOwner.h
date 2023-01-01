@@ -43,7 +43,8 @@ public:
     void setRoot(Node* temp);
     int updateHeight(Node* temp);
     Owner* getAgency(string agency);
-    void searchNode(string agency);
+    void searchNode(string agent);
+    void printByAgent(string agent);
 };
 
 
@@ -270,18 +271,27 @@ Owner* AVLOwner::getAgency( string agency ) {
     return nullptr;
 }
 
-void AVLOwner::searchNode( string agency ) {
+void AVLOwner::searchNode( string agent ) {
     loc = ploc = nullptr;
     if(!isEmpty()){
         loc = root;
-        while( loc->obj->getAgentName() != agency and loc != nullptr){
+        while( loc->obj->getAgentName() != agent and loc != nullptr){
             ploc = loc;
-            if(agency < loc->obj->getAgentName()){
+            if(agent < loc->obj->getAgentName()){
                 loc = loc->left;
             }else{
                 loc = loc->right;
             }
         }
+    }
+}
+
+void AVLOwner::printByAgent( string agent ) {
+    searchNode(agent);
+    if(loc != nullptr and loc->obj->getAgentName() == agent){
+        loc->obj->printForOwner();
+    }else{
+        cout << "Agent not found" << endl;
     }
 }
 
