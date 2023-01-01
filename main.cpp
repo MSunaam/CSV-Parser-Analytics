@@ -7,8 +7,10 @@
 //#include "Models/Property.h"
 #include "Models/Location.h"
 //#include "Models/Owner.h"
-#include "DataStructures/AVLOwner.h"
+#include "DataStructures/AVLAgent.h"
 #include "printFunction.h"
+#include "Functions/Functions.h"
+#include "DataStructures/AVLAgency.h"
 using namespace std;
 
 string pathToCSV = "/Users/muhammadsunaam/Library/CloudStorage/OneDrive-NationalUniversityofSciences&Technology/Semester 3/DSA/CSV-Parser-Analytics/CSV/Property.csv";
@@ -18,8 +20,11 @@ int main(){
     HashTableAVL *propertyTable;
     propertyTable = new HashTableAVL(200000);
 
-    AVLOwner *ownerTree;
-    ownerTree = new AVLOwner();
+    AVLAgent *agentTree;
+    AVLAgency *agencyTree;
+    agentTree = new AVLAgent();
+    agencyTree = new AVLAgency();
+
 
     std::ifstream in(pathToCSV);
     if (in.fail()) return (cout << "File not found" << endl) && 0;
@@ -102,8 +107,10 @@ int main(){
             //Insert property into owner
             owner->insertProperty(prop);
 
-            //Insert Owner Into Owner Tree
-            ownerTree->setRoot(ownerTree->insertNode(owner, ownerTree->getRoot()));
+            //Insert Owner Into Owner Tree sorted by Agent Name
+            agentTree->setRoot(agentTree->insertNode(owner, agentTree->getRoot()));
+            //Insert Owner Into Owner Tree sorted by Agency Name
+            agencyTree->setRoot(agencyTree->insertNodeAgency(owner, agencyTree->getRoot()));
 
             //Insert property into hash table
             propertyTable->insertIntoTable(prop);
@@ -112,8 +119,8 @@ int main(){
     }
     in.close();
 
-//    propertyTable->print(200000);
-    ownerTree->printPreOrder(ownerTree->getRoot());
+//   searchForAgency(agencyTree, "1 One Enterprises");
+    searchForAgent(agentTree, "Zahid Iqbal");
 }
 
 
