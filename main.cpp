@@ -15,7 +15,7 @@ string pathToCSV = "Property.csv";
 int main(){
 
     HashTableAVL *propertyTable;
-    propertyTable = new HashTableAVL(20000);
+    propertyTable = new HashTableAVL(000);
 
     AVLOwner *ownerTree;
     ownerTree = new AVLOwner();
