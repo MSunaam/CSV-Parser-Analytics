@@ -27,13 +27,23 @@
 	[
 		{
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:cmake-build-debug/.cmake/api/v1/reply/index-2023-01-01T18-56-29-0369.json
+>>>>>>> parent of 785b6a3 (update used some enums)
 <<<<<<<< HEAD:cmake-build-debug/.cmake/api/v1/reply/index-2023-01-01T18-56-29-0369.json
 			"jsonFile" : "codemodel-v2-89ff2b5b3ec9bf0facd5.json",
 ========
 			"jsonFile" : "codemodel-v2-c086c57ca8b8ca48507f.json",
 >>>>>>>> parent of 785b6a3 (update used some enums):cmake-build-debug/.cmake/api/v1/reply/index-2023-01-01T13-08-33-0440.json
+<<<<<<< HEAD
 =======
 			"jsonFile" : "codemodel-v2-c086c57ca8b8ca48507f.json",
+>>>>>>> parent of 785b6a3 (update used some enums)
+=======
+========
+			"jsonFile" : "codemodel-v2-c086c57ca8b8ca48507f.json",
+>>>>>>>> parent of 785b6a3 (update used some enums):cmake-build-debug/.cmake/api/v1/reply/index-2023-01-01T13-08-33-0440.json
 >>>>>>> parent of 785b6a3 (update used some enums)
 			"kind" : "codemodel",
 			"version" : 
@@ -95,13 +105,23 @@
 		"codemodel-v2" : 
 		{
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:cmake-build-debug/.cmake/api/v1/reply/index-2023-01-01T18-56-29-0369.json
+>>>>>>> parent of 785b6a3 (update used some enums)
 <<<<<<<< HEAD:cmake-build-debug/.cmake/api/v1/reply/index-2023-01-01T18-56-29-0369.json
 			"jsonFile" : "codemodel-v2-89ff2b5b3ec9bf0facd5.json",
 ========
 			"jsonFile" : "codemodel-v2-c086c57ca8b8ca48507f.json",
 >>>>>>>> parent of 785b6a3 (update used some enums):cmake-build-debug/.cmake/api/v1/reply/index-2023-01-01T13-08-33-0440.json
+<<<<<<< HEAD
 =======
 			"jsonFile" : "codemodel-v2-c086c57ca8b8ca48507f.json",
+>>>>>>> parent of 785b6a3 (update used some enums)
+=======
+========
+			"jsonFile" : "codemodel-v2-c086c57ca8b8ca48507f.json",
+>>>>>>>> parent of 785b6a3 (update used some enums):cmake-build-debug/.cmake/api/v1/reply/index-2023-01-01T13-08-33-0440.json
 >>>>>>> parent of 785b6a3 (update used some enums)
 			"kind" : "codemodel",
 			"version" : 

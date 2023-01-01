@@ -6,7 +6,11 @@ set(CMAKE_CXX_STANDARD 11)
 add_executable(Project_New
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         main.cpp Models/Property.h Models/Location.h Models/Owner.h DataStructures/AVLProperty.h DataStructures/HashTable.h Models/PropertyType.h Models/Purpose.h CSV/csv.h DataStructures/HashTableAVL.h DataStructures/AVLAgent.h printFunction.h Models/City.h Models/Province.h Functions/Functions.h DataStructures/AVLAgency.h)
+=======
+        main.cpp Models/Property.h Models/Location.h Models/Owner.h DataStructures/AVLProperty.h DataStructures/HashTable.h Models/PropertyType.h Models/Purpose.h CSV/csv.h DataStructures/HashTableAVL.h DataStructures/AVLOwner.h printFunction.h)
+>>>>>>> parent of 785b6a3 (update used some enums)
 =======
         main.cpp Models/Property.h Models/Location.h Models/Owner.h DataStructures/AVLProperty.h DataStructures/HashTable.h Models/PropertyType.h Models/Purpose.h CSV/csv.h DataStructures/HashTableAVL.h DataStructures/AVLOwner.h printFunction.h)
 >>>>>>> parent of 785b6a3 (update used some enums)
