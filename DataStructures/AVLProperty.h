@@ -6,6 +6,7 @@
 #define PROJECT_NEW_AVLPROPERTY_H
 
 #include "../Models/Property.h"
+#include "../Models/Owner.h"
 
 
 #include<iostream>
@@ -14,9 +15,12 @@ using namespace std;
 
 struct NodeAVL{
     Property* obj;
+    Owner* owner;
     NodeAVL* left, *right;
     int height;
     NodeAVL(){
+        obj = nullptr;
+        owner = nullptr;
         left = right = nullptr;
         height = 1;
     }

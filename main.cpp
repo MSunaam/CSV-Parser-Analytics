@@ -110,16 +110,16 @@ void storeInStructures(string path, int size, int choiceOfSort){
             Property *prop = new Property(property_id, baths, bedrooms, page_url, date, price, type, purpose, loc, owner);
 
             //Insert property into owner
-            owner->insertProperty(prop);
+//            owner->insertProperty(prop);
 
 
-            if(choiceOfSort == 2){
-                //Insert Owner Into Owner Tree according to agent
-                ownerTree->setRoot(ownerTree->insertNode(owner, ownerTree->getRoot()));
-            }else if(choiceOfSort == 1){
-                //Insert Owner Into Owner Tree sorted by Agencies
-                agenciesTree->setRoot(agenciesTree->insertNode(owner, agenciesTree->getRoot()));
-            }
+
+            //Insert Owner Into Owner Tree according to agent
+            ownerTree->setRoot(ownerTree->insertNode(owner, ownerTree->getRoot()));
+
+            //Insert Owner Into Owner Tree sorted by Agencies
+            agenciesTree->setRoot(agenciesTree->insertNode(owner, agenciesTree->getRoot()));
+
 
             //Insert property into hash table
             propertyTable->insertIntoTable(prop);

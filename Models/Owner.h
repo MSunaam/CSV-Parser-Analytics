@@ -14,33 +14,42 @@ class Owner{
     string agency, agent;
     AVLProperty *properties;
 public:
-    Owner(string agency, string agent){
-        this->agency = agency;
-        this->agent = agent;
-        properties = new AVLProperty();
-    }
-    void printForOwner(){
-        cout << "Agency: " << agency << endl;
-        cout << "Agent: " << agent << endl;
-        cout << "_____Properties_____" << endl;
-        properties->printPreOrder(properties->getRoot());
-    }
-    void printFromProperty(){
-        cout << "Agency: " << agency << endl;
-        cout << "Agent: " << agent << endl;
-    }
-    string getAgencyName(){
-        return agency;
-    }
-    string getAgentName(){
-        return agent;
-    }
-    void insertProperty(Property* aProperty){
-        properties->setRoot(properties->insertNode(aProperty, properties->getRoot()));
-    }
-    Property* getFirstPropertyInserted(){
-        return properties->getRootObject();
-    }
+    Owner(string agency, string agent);
+    void printForOwner();
+    void printFromProperty();
+    string getAgencyName();
+    string getAgentName();
+    void insertProperty(Property* aProperty);
+    Property* getFirstPropertyInserted();
 };
+
+Owner::Owner(string agency, string agent){
+this->agency = agency;
+this->agent = agent;
+properties = new AVLProperty();
+}
+
+void Owner::printForOwner(){
+    cout << "Agency: " << agency << endl;
+    cout << "Agent: " << agent << endl;
+    cout << "_____Properties_____" << endl;
+    properties->printPreOrder(properties->getRoot());
+}
+void Owner::printFromProperty(){
+    cout << "Agency: " << agency << endl;
+    cout << "Agent: " << agent << endl;
+}
+string Owner::getAgencyName(){
+    return agency;
+}
+string Owner::getAgentName(){
+    return agent;
+}
+void Owner::insertProperty(Property* aProperty){
+    properties->setRoot(properties->insertNode(aProperty, properties->getRoot()));
+}
+Property* Owner::getFirstPropertyInserted(){
+    return properties->getRootObject();
+}
 
 #endif //PROJECT_NEW_OWNER_H
