@@ -137,8 +137,8 @@ int main(){
     storeInStructures(pathToCSV, 200000);
 //    propertyTable->print(200000);
 //(propertyTable->table[2747251%200000].getProperty(2747251))->print();
-    ownerTree->printByAgent("Engr Waseem Cheema");
-//    agenciesTree->printByAgency("Estate plus");
+//    ownerTree->printByAgent("Engr Waseem Cheema");
+//    agenciesTree->printByAgency("Estate Region");
 //    searchPropertyByID(2146098, propertyTable);
 
 }

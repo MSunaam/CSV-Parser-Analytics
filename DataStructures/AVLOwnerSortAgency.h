@@ -202,7 +202,7 @@ void AVLOwnerSortAgency::deleteNode( Owner* value ) {
             }
         }
 
-        if( loc->obj->getAgentName() == value->getAgentName()){
+        if( loc->obj->getAgencyName() == value->getAgencyName()){
             delete loc;
         }else{
             //replacement node is loc
@@ -264,7 +264,7 @@ void AVLOwnerSortAgency::searchNode( string agency ) {
         loc = root;
         while(  loc != nullptr and loc->obj->getAgencyName() != agency){
             ploc = loc;
-            if(agency < loc->obj->getAgentName()){
+            if(agency < loc->obj->getAgencyName()){
                 loc = loc->left;
             }else{
                 loc = loc->right;
