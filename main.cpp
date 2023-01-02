@@ -113,7 +113,9 @@ void storeInStructures(string path, int size){
             //Insert property into owner
 //            owner->insertProperty(prop);
 
+            if(agency == "Estate Region"){
 
+            }
 
             //Insert Owner Into Owner Tree according to agent
             ownerTree->setRoot(ownerTree->insertNode(owner, ownerTree->getRoot(), prop));
@@ -135,8 +137,8 @@ int main(){
     storeInStructures(pathToCSV, 200000);
 //    propertyTable->print(200000);
 //(propertyTable->table[2747251%200000].getProperty(2747251))->print();
-//    ownerTree->printByAgent("Usama Khalid");
-    agenciesTree->printByAgency("10 Star Enterprises");
+    ownerTree->printByAgent("Engr Waseem Cheema");
+//    agenciesTree->printByAgency("Estate plus");
 //    searchPropertyByID(2146098, propertyTable);
 
 }
