@@ -140,11 +140,6 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "DataStructures/HashTable.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
 			"path" : "Models/PropertyType.h",
 			"sourceGroupIndex" : 1
 		},
@@ -191,6 +186,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "DataStructures/AVLOwnerSortAgency.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "DataStructures/AVLSortByDate.h",
 			"sourceGroupIndex" : 1
 		}
 	],

@@ -17,6 +17,7 @@ string pathToCSV = "/Users/muhammadsunaam/Library/CloudStorage/OneDrive-National
 AVLOwnerSortAgency *agenciesTree;
 AVLOwner *ownerTree;
 HashTableAVL *propertyTable;
+//AVLSortByDate *dateTree;
 
 void storeInStructures(string path, int size){
 
@@ -133,9 +134,10 @@ int main(){
 
     storeInStructures(pathToCSV, 200000);
 //    propertyTable->print(200000);
-//    ownerTree->printByAgent("Zahid Iqbal");
-//    agenciesTree->printByAgency("1 One Enterprises");
-//    searchPropertyByID(17387503, propertyTable);
+//(propertyTable->table[2747251%200000].getProperty(2747251))->print();
+//    ownerTree->printByAgent("Usama Khalid");
+    agenciesTree->printByAgency("10 Star Enterprises");
+//    searchPropertyByID(2146098, propertyTable);
 
 }
 
