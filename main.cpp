@@ -18,7 +18,7 @@ AVLOwnerSortAgency *agenciesTree;
 AVLOwner *ownerTree;
 HashTableAVL *propertyTable;
 
-void storeInStructures(string path, int size, int choiceOfSort){
+void storeInStructures(string path, int size){
 
     propertyTable = new HashTableAVL(200000);
 
@@ -115,10 +115,10 @@ void storeInStructures(string path, int size, int choiceOfSort){
 
 
             //Insert Owner Into Owner Tree according to agent
-            ownerTree->setRoot(ownerTree->insertNode(owner, ownerTree->getRoot()));
+            ownerTree->setRoot(ownerTree->insertNode(owner, ownerTree->getRoot(), prop));
 
             //Insert Owner Into Owner Tree sorted by Agencies
-            agenciesTree->setRoot(agenciesTree->insertNode(owner, agenciesTree->getRoot()));
+            agenciesTree->setRoot(agenciesTree->insertNode(owner, agenciesTree->getRoot(), prop));
 
 
             //Insert property into hash table
@@ -131,79 +131,11 @@ void storeInStructures(string path, int size, int choiceOfSort){
 
 int main(){
 
-    //give menu to user
-    int choice = -1;
-    bool sortedByAgent = false;
-
-    cout << "---------Welcome---------" << endl;
-    do{
-        cout << "Enter 0 to Exit" << endl;
-        cout << "Enter 1 to load CSV file" << endl;
-        cin.clear(); cin.ignore(255, '\n'); cin >> choice;
-    }while(choice < 0 || choice > 1);
-
-    if(choice == 0) return 0;
-    else{
-
-        choice  = -1;
-
-        do{
-            cout << "Press 1 to sort the owner information according to the agency" <<endl;
-            cout << "Press 2 to sort the owner information according to the agent" <<endl;
-            cin.clear(); cin.ignore(255, '\n'); cin >> choice;
-        }while(choice < 1 || choice > 2);
-        if(choice == 1){
-            storeInStructures(pathToCSV, 200000, 1);
-        }else{
-            storeInStructures(pathToCSV, 200000, 2);
-            sortedByAgent = true;
-        }
-        cout << "Data Stored!" << endl;
-    }
-    choice = -1;
-
-    while(choice != 0){
-
-        do{
-            if(sortedByAgent){
-                //data sorted by agent
-                cout << "Press 1 to search an agent" << endl;
-            }else{
-                //data sorted by agency
-                cout << "Press 1 to search an agency" << endl;
-            }
-            cout << "Press 2 to print all properties" << endl;
-            cin.clear(); cin.ignore(255, '\n'); cin >> choice;
-
-            string name;
-            switch ( choice ) {
-                case 1:
-                    if(sortedByAgent){
-                        cout << "Enter Agent Name: " << endl;
-                        cin.clear(); cin.ignore(256, '\n');
-                        getline(cin, name);
-                        searchForAgent(ownerTree,name);
-                    }else{
-                        cout << "Enter Agency Name: " << endl;
-                        cin.clear(); cin.ignore(256, '\n');
-                        getline(cin, name);
-                        searchForAgency(agenciesTree, name);
-                    }
-                    break;
-                case 2:
-                    propertyTable->print(200000);
-                    break;
-                default:
-                    break;
-            }
-
-        }while((choice < 1 || choice > 2) and choice != 0);
-
-
-
-    }
-    cout << "---------Bye-Bye---------" << endl;
-
+    storeInStructures(pathToCSV, 200000);
+//    propertyTable->print(200000);
+//    ownerTree->printByAgent("Zahid Iqbal");
+//    agenciesTree->printByAgency("1 One Enterprises");
+//    searchPropertyByID(17387503, propertyTable);
 
 }
 

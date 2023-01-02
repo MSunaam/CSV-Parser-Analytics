@@ -19,5 +19,10 @@ void searchForAgency( AVLOwnerSortAgency* agencies, string agency){
     agencies->printByAgency(agency);
 }
 
+void searchPropertyByID(int id, HashTableAVL* table){
+    Property* aProperty = table->getValueByID(id);
+    if(aProperty) aProperty->print();
+}
+
 
 #endif //PROJECT_NEW_FUNCTIONS_H

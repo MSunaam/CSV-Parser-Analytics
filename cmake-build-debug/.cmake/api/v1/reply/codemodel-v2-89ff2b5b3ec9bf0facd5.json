@@ -1,0 +1,76 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.23"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Project_New",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Project_New::@6890427a1f51a3e7e1df",
+<<<<<<<< HEAD:cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-89ff2b5b3ec9bf0facd5.json
+<<<<<<<< HEAD:cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-89ff2b5b3ec9bf0facd5.json
+<<<<<<<< HEAD:cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-89ff2b5b3ec9bf0facd5.json
+<<<<<<<< HEAD:cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-89ff2b5b3ec9bf0facd5.json
+					"jsonFile" : "target-Project_New-Debug-9ebe473f6f9662d4c1ec.json",
+========
+					"jsonFile" : "target-Project_New-Debug-76b98e2c66781733c1a4.json",
+>>>>>>>> parent of 785b6a3 (update used some enums):cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-c086c57ca8b8ca48507f.json
+========
+					"jsonFile" : "target-Project_New-Debug-76b98e2c66781733c1a4.json",
+>>>>>>>> parent of 785b6a3 (update used some enums):cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-c086c57ca8b8ca48507f.json
+========
+					"jsonFile" : "target-Project_New-Debug-76b98e2c66781733c1a4.json",
+>>>>>>>> parent of 785b6a3 (update used some enums):cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-c086c57ca8b8ca48507f.json
+========
+					"jsonFile" : "target-Project_New-Debug-76b98e2c66781733c1a4.json",
+>>>>>>>> parent of 785b6a3 (update used some enums):cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-c086c57ca8b8ca48507f.json
+					"name" : "Project_New",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/muhammadsunaam/Library/CloudStorage/OneDrive-NationalUniversityofSciences&Technology/Semester 3/DSA/CSV-Parser-Analytics/cmake-build-debug",
+		"source" : "/Users/muhammadsunaam/Library/CloudStorage/OneDrive-NationalUniversityofSciences&Technology/Semester 3/DSA/CSV-Parser-Analytics"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

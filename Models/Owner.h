@@ -21,6 +21,7 @@ public:
     string getAgentName();
     void insertProperty(Property* aProperty);
     Property* getFirstPropertyInserted();
+    void printFromTree();
 };
 
 Owner::Owner(string agency, string agent){
@@ -50,6 +51,11 @@ void Owner::insertProperty(Property* aProperty){
 }
 Property* Owner::getFirstPropertyInserted(){
     return properties->getRootObject();
+}
+
+void Owner::printFromTree() {
+    cout << "Agency: " << agency << endl;
+    cout << "Agent: " << agent << endl;
 }
 
 #endif //PROJECT_NEW_OWNER_H

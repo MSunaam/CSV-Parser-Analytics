@@ -17,9 +17,12 @@ using namespace std;
 
 struct Node{
     Owner* obj;
+    AVLProperty* properties;
     Node* left, *right;
     int height;
     Node(){
+        obj = nullptr;
+        properties = new AVLProperty();
         left = right = nullptr;
         height = 1;
     }
@@ -31,8 +34,8 @@ private:
 public:
     AVLOwner();
     bool isEmpty();
-    Node* insertNode(Owner *value, Node* temp);
-    void searchNode(Owner *value);
+    Node* insertNode(Owner *value, Node* temp, Property* property);
+    void searchNode(Owner *owner);
     int getBalanceFactor(Node* temp);
     int getHeight(Node* temp);
     Node* rightRotate(Node* tempRoot);
@@ -57,23 +60,25 @@ bool AVLOwner::isEmpty() {
 }
 
 
-Node* AVLOwner::insertNode( Owner* value, Node* temp ) {
+Node* AVLOwner::insertNode( Owner* value, Node* temp, Property* property ) {
     if(temp == nullptr){
         auto* newNode = new Node;
         newNode->obj = value;
+        newNode->properties->setRoot(newNode->properties->insertNode(property, newNode->properties->getRoot()));
         return newNode;
     }
     else if( temp->obj->getAgentName() == value->getAgentName()){
         //Node with that value already exists, avoid duplication.
         //But Insert the values of properties
-        temp->obj->insertProperty(value->getFirstPropertyInserted());
+        temp->properties->setRoot(temp->properties->insertNode(property, temp->properties->getRoot()));
+        temp->obj->insertProperty(property);
         return temp;
     }
     else if( temp->obj->getAgentName() > value->getAgentName()){
         //go left
-        temp->left = insertNode(value, temp->left);
+        temp->left = insertNode(value, temp->left, property);
     }else{
-        temp->right = insertNode(value, temp->right);
+        temp->right = insertNode(value, temp->right, property);
     }
 
     //change the heights
@@ -283,7 +288,8 @@ void AVLOwner::printByAgent( string agent ) {
         cout << "Agent not found" << endl;
         return;
     }else{
-        loc->obj->printForOwner();
+        loc->obj->printFromProperty();
+        loc->properties->printPreOrder(loc->properties->getRoot());
     }
 }
 

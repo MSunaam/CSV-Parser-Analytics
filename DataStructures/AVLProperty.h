@@ -261,10 +261,12 @@ int AVLProperty::updateHeight( NodeAVL *temp ) {
 
 Property* AVLProperty::getProperty( int id ) {
     searchNode(id);
-    if(loc->obj->getPropertyId() == id){
-        return loc->obj;
+
+    if(loc == nullptr || loc->obj->getPropertyId() != id){
+        cout << "Property not found" << endl;
+        return nullptr;
     }
-    return nullptr;
+    return loc->obj;
 }
 
 void AVLProperty::searchNode( int id ) {
