@@ -17,7 +17,7 @@ string pathToCSV = "/Users/muhammadsunaam/Library/CloudStorage/OneDrive-National
 AVLOwnerSortAgency *agenciesTree;
 AVLOwner *ownerTree;
 HashTableAVL *propertyTable;
-//AVLSortByDate *dateTree;
+AVLProperty* sortedDateTree;
 
 void storeInStructures(string path, int size){
 
@@ -25,6 +25,8 @@ void storeInStructures(string path, int size){
 
 
     ownerTree = new AVLOwner();
+
+    sortedDateTree = new AVLProperty();
 
 
     agenciesTree = new AVLOwnerSortAgency();
@@ -123,7 +125,6 @@ void storeInStructures(string path, int size){
             //Insert Owner Into Owner Tree sorted by Agencies
             agenciesTree->setRoot(agenciesTree->insertNode(owner, agenciesTree->getRoot(), prop));
 
-
             //Insert property into hash table
             propertyTable->insertIntoTable(prop);
         }
@@ -136,7 +137,7 @@ int main(){
 
     storeInStructures(pathToCSV, 200000);
 //    propertyTable->print(200000);
-//(propertyTable->table[2747251%200000].getProperty(2747251))->print();
+//    (propertyTable->table[2747251%200000].getProperty(2747251))->print();
 //    ownerTree->printByAgent("Engr Waseem Cheema");
 //    agenciesTree->printByAgency("Estate Region");
 //    searchPropertyByID(2146098, propertyTable);

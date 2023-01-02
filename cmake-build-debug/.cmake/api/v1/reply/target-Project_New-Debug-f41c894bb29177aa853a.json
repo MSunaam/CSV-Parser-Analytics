@@ -105,8 +105,7 @@
 				11,
 				12,
 				13,
-				14,
-				15
+				14
 			]
 		}
 	],
@@ -186,11 +185,6 @@
 		{
 			"backtrace" : 1,
 			"path" : "DataStructures/AVLOwnerSortAgency.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"path" : "DataStructures/AVLSortByDate.h",
 			"sourceGroupIndex" : 1
 		}
 	],

@@ -20,6 +20,7 @@ class Property{
     Location* location;
     Owner* owner;
 public:
+    string getDate();
     void print();
     int getPropertyId() const;
     Property();
@@ -67,6 +68,10 @@ Property::Property() {
 
 bool Property::operator=(Property obj1) {
     return (this->propertyId == obj1.propertyId);
+}
+
+string Property::getDate() {
+    return dateAdded;
 }
 
 
