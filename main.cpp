@@ -4,10 +4,7 @@
 #include <fstream>
 #include "CSV/csv.h"
 #include "DataStructures/HashTableAVL.h"
-//#include "Models/Property.h"
 #include "Models/Location.h"
-//#include "Models/Owner.h"
-//#include "DataStructures/AVLOwner.h"
 #include "printFunction.h"
 #include "Functions/Functions.h"
 using namespace std;
@@ -17,7 +14,7 @@ string pathToCSV = "/Users/muhammadsunaam/Library/CloudStorage/OneDrive-National
 AVLOwnerSortAgency *agenciesTree;
 AVLOwner *ownerTree;
 HashTableAVL *propertyTable;
-AVLProperty* sortedDateTree;
+
 
 void storeInStructures(string path, int size){
 
@@ -25,8 +22,6 @@ void storeInStructures(string path, int size){
 
 
     ownerTree = new AVLOwner();
-
-    sortedDateTree = new AVLProperty();
 
 
     agenciesTree = new AVLOwnerSortAgency();
@@ -133,20 +128,90 @@ void storeInStructures(string path, int size){
     in.close();
 }
 
+
+class Mainmenu{
+public:
+    Mainmenu(){
+        cout << "Welcome to the Property Management System" << endl;
+        //create a while loop that asks for exit or load data
+        //if load data is selected then call the load data function
+        int choice;
+        do{
+            cout << "1. Load Data" << endl;
+            cout << "2. Exit" << endl;
+            cin >> choice;
+            switch (choice) {
+                case 1:
+                    storeInStructures(pathToCSV, 200000);
+                    break;
+                case 2:
+                    cout << "Thank you for using the Property Management System" << endl;
+                    return;
+                    break;
+                default:
+                    cout << "Invalid Choice" << endl;
+                    break;
+            }
+        }while(choice != 2 && choice != 1);
+
+        //ask to search by name or agency
+        //if name is selected then call the search by name function
+        //if agency is selected then call the search by agency function
+        choice = 0;
+        string name;
+        do{
+            cout << "1. Search by Name" << endl;
+            cout << "2. Search by Agency" << endl;
+            cout << "3. Search Property by ID" << endl;
+            cout << "4. Print all Properties" << endl;
+            cout << "5. Exit" << endl;
+            cin >> choice;
+            switch (choice) {
+                case 1:
+                    cout << "Please enter the name of the agent" << endl;
+                    cin.clear();
+                    cin.ignore(256, '\n');
+                    getline(cin, name);
+                    searchForAgent(ownerTree, name);
+                    break;
+                case 2:
+                    cout << "Please enter the name of the agency" << endl;
+                    cin.clear();
+                    cin.ignore(256, '\n');
+                    getline(cin, name);
+                    searchForAgency(agenciesTree, name);
+                    break;
+                case 4:
+                    propertyTable->print(200000);
+                    break;
+                case 3:
+                    cout << "Please enter the ID of the property" << endl;
+                    cin.clear();
+                    cin.ignore(256, '\n');
+                    int index; cin >> index;
+                    searchPropertyByID(index, propertyTable);
+                    break;
+                case 5:
+                    cout << "Thank you for using the Property Management System" << endl;
+                    return;
+                    break;
+                default:
+                    cout << "Invalid Choice" << endl;
+                    break;
+            }
+        }while(choice != 3 && choice != 2 && choice != 1 && choice != 4 && choice != 5);
+
+    }
+
+};
+
+
+
 int main(){
 
-    storeInStructures(pathToCSV, 200000);
-//
+    Mainmenu menu;
 
 }
-
-
-
-
-
-
-
-
 
 
 
