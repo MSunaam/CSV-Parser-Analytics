@@ -8,6 +8,8 @@
 #include<string>
 #include "City.h"
 #include "Province.h"
+#include "Models/Property.h"
+#include <iostream>
 using namespace std;
 
 class Location{

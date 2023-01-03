@@ -6,7 +6,7 @@
 #define PROJECT_NEW_OWNER_H
 
 #include<string>
-//#include "DataStructures/AVLProperty.h"
+#include "DataStructures/AVLProperty.h"
 
 using namespace std;
 
